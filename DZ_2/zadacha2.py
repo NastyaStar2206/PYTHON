@@ -1,12 +1,11 @@
-#Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+# Пример:
+# пусть N = 4, тогда (1, 1*2, 1*2*3, 1*2*3*4)
 
-from itertools import accumulate
-import operator
-
-N = int(input('Введите число: '))
-
-
-def get_prods(N):
-    return list(accumulate([x for x in range(1, N + 1)], operator.mul))
-
-print(get_prods(N))
+num = int(input("Введите число: "))
+factorial = 1
+fact_arr= [] 
+for i in range(1, num+1):
+    factorial *= i
+    fact_arr.append(factorial)
+print(f'N = {num} -> {fact_arr}')
