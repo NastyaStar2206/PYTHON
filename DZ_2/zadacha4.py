@@ -1,21 +1,18 @@
+# Реализуйте алгоритм перемешивания списка, без использования встроеных методов (особенно SHUFFLE, без него)
+# можно (нужно) использовать библиотеку Random
+
 import random
 
-def mix_list(list_original):
-    return [random.randint(list_original)]
+example_arr = [random.randint(0, 20) for i in range(random.randint(3, 10))] 
+print(f"Изначальный список: {example_arr}")
 
-
-    # Создаем копию, поскольку мы не должны изменять оригинал
-    list = list_original[:]
-    # Цикл от 0 до длины списка -1
-    list_length = len(list)
-    for i in range(list_length):
-        # Получение случайного индекса
-        index_aleatory = random.randint(0, list_length - 1)
-        # Замена
-        temp = list[i]
-        list[i] = list[index_aleatory]
-        list[index_aleatory] = temp
-    # Возвращаем список
-    return list
-
-    print(list)
+def result_arr(example_arr):
+    arr = example_arr[:]
+    for i in range(len(arr)):
+        index = random.randint(0, len(arr) - 1)
+        temp = arr[i]
+        arr[i] = arr[index]
+        arr[index] = temp
+    return arr
+new_arr = result_arr(example_arr)
+print(f"Перемешанный список: {new_arr}")
