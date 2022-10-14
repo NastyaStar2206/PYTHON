@@ -1,12 +1,10 @@
-#Задайте список из n чисел последовательности (1+1/n)^n
+# Задайте список из n чисел последовательности (1+1/n)^n
+# Выведитте на экран саму последовательность и сумму элементов этой последовательности 
+# (для проверки сумма для 4 элементов = 9,06 (примерно))
 
-from msilib import sequence
-
-n = int(input('Введите число: ')) 
-
-def get_squerence(n):
-    return [round((1 + 1 / x)**x, 5) for x in range (1, n + 1)]
-
-nums = get_squerence(n)
-print(nums)
-print(round(sum(nums), 5))
+num = int(input("Введите число: "))
+sum = 0
+num_arr = [round(((1 + 1/i)**i),2) for i in range (1, num+1)]
+for i in num_arr:
+    sum += i
+print(f'В последовательности {num_arr} сумма элементов равна {sum}')
