@@ -1,5 +1,9 @@
 import random
+
 def mix_list(list_original):
+    return [random.randint(list_original)]
+
+
     # Создаем копию, поскольку мы не должны изменять оригинал
     list = list_original[:]
     # Цикл от 0 до длины списка -1
